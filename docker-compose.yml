@@ -1,4 +1,6 @@
+# versão especificada de acordo com a matriz de versão do Docker
 version: '3.8'
+# Especifica quais containers serão "rodados"
 services:
 
   db:
@@ -33,10 +35,10 @@ services:
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - wordpress:/var/www/html
-
+# Volumes referencidos na criação dos containers
 volumes:
   db:
   wordpress:
-
+# Especificação da rede a ser usada
 networks:
   stack_web:
