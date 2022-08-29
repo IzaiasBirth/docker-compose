@@ -1,9 +1,10 @@
 # versão especificada de acordo com a matriz de versão do Docker
 version: '3.8'
+
 # Especifica quais containers serão "rodados"
 services:
 
-  db:
+  db:         #container de banco de dados
     image: mysql:5.7
     restart: always
     networks:
@@ -20,8 +21,8 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  wordpress:
-    depends_on:
+  wordpress:       #container wordpress
+    depends_on:    #especifica uma dependência para subir o serviço; nesse caso, o banco de dados
       - db
     image: wordpress:latest
     networks:
